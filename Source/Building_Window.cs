@@ -10,7 +10,7 @@ namespace ElifsDecorations
 {
     public class Building_Window : Building
     {
-        public int size => Math.Max(def.size.x, def.size.z);
+        public int Size => Math.Max(def.size.x, def.size.z);
 
         private CompWindow windowComp = null;
         private int LastUpdate = -1;
@@ -40,9 +40,11 @@ namespace ElifsDecorations
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-
+            
             WindowCache.WindowComponent.RegisterWindow(this);
-            WindowComp.GetBeauty();
+
+            if (ElifsDecorationsSettings.BeautyEnabled)
+                WindowComp.GetBeauty();
         }
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
@@ -75,9 +77,9 @@ namespace ElifsDecorations
         {
             base.TickRare();
 
-            if (WindowComp.state == State.Open)
+            if (WindowComp.state == State.Ajar)
             {
-                float rate = size * 14f; // following in suit of the default '14f' of a vent in vanilla
+                float rate = Size * 14f; // following in suit of the default '14f' of a vent in vanilla
                 GenTemperature.EqualizeTemperaturesThroughBuilding(this, rate, true);
             }
 
@@ -89,7 +91,8 @@ namespace ElifsDecorations
                 }
 
                 LastUpdate = 25;
-                WindowComp.GetBeauty();
+                if(ElifsDecorationsSettings.BeautyEnabled)
+                    WindowComp.GetBeauty();
             }
 
         }

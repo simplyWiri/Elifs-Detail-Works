@@ -7,26 +7,33 @@ using Verse;
 
 namespace ElifsDecorations
 {
-    // Default lets light & beauty through
-    // Open lets light & beauty & temperature flow + shooting through
+    // Open lets light & beauty through
+    // Ajar lets light & beauty & temperature flow + shooting through
     // Closed lets none through
     public enum State { Open, Ajar, Closed }
 
     [StaticConstructorOnStartup]
+    public static class GraphicCache
+    {
+        public static Texture2D OpenIcon = ContentFinder<Texture2D>.Get("UI/Open", false);
+        public static Texture2D ClosedIcon = ContentFinder<Texture2D>.Get("UI/Closed", false);
+        public static Texture2D AjarIcon = ContentFinder<Texture2D>.Get("UI/Ajar", false);
+        public static Texture2D FlipIcon = ContentFinder<Texture2D>.Get("UI/Flip", false);
+    }
+
     public class CompWindow : ThingComp
     {
         public Building_Window Parent => (Building_Window)parent;
-        private Graphic offGraphic = null;
-        private Graphic ventingGraphic = null;
-        private static Texture2D OpenIcon = ContentFinder<Texture2D>.Get("UI/Open", false);
-        private static Texture2D ClosedIcon = ContentFinder<Texture2D>.Get("UI/Closed", false);
-        private static Texture2D AjarIcon = ContentFinder<Texture2D>.Get("UI/Ajar", false);
-        private static Texture2D FlipIcon = ContentFinder<Texture2D>.Get("UI/Flip", false);
+
+        Graphic offGraphic = null;
+        Graphic ajarGraphic = null;
+
         public State state = State.Open;
         public State wantedState = State.Open;
         public LinkDirections facing = LinkDirections.None;
         public float CachedBeauty = 0f;
 
+        
         public CompProperties_Window Props => (CompProperties_Window)props;
 
         public Graphic OffGraphic
@@ -35,17 +42,18 @@ namespace ElifsDecorations
             {
                 if (offGraphic == null)
                     offGraphic = GraphicDatabase.Get(parent.def.graphicData.graphicClass, parent.def.graphicData.texPath + "_Off", parent.def.graphicData.shaderType.Shader, parent.def.graphicData.drawSize, parent.DrawColor, parent.DrawColorTwo);
+
                 return offGraphic;
             }
         }
-        public Graphic VentingGraphic
+        public Graphic AjarGraphic
         {
             get
             {
-                if (ventingGraphic == null)
-                    ventingGraphic = GraphicDatabase.Get(parent.def.graphicData.graphicClass, parent.def.graphicData.texPath + "_Open", parent.def.graphicData.shaderType.Shader, parent.def.graphicData.drawSize, parent.DrawColor, parent.DrawColorTwo);
+                if (ajarGraphic == null)
+                    ajarGraphic = GraphicDatabase.Get(parent.def.graphicData.graphicClass, parent.def.graphicData.texPath + "_Ajar", parent.def.graphicData.shaderType.Shader, parent.def.graphicData.drawSize, parent.DrawColor, parent.DrawColorTwo);
 
-                return ventingGraphic;
+                return ajarGraphic;
             }
         }
         public Graphic CurrentGraphic
@@ -55,7 +63,7 @@ namespace ElifsDecorations
                 switch (state)
                 {
                     case State.Open:        return parent.DefaultGraphic;
-                    case State.Ajar:        return VentingGraphic;
+                    case State.Ajar:        return AjarGraphic;
                 }
                 return OffGraphic;
             }
@@ -67,66 +75,85 @@ namespace ElifsDecorations
                 yield return gizmo;
 
             Command_Action command = new Command_Action();
+            GetStateGizmo(ref command);
+            yield return command;
+
+            command = new Command_Action();
+            GetFacingGizmo(ref command);
+            yield return command;
+        }
+
+        public void GetStateGizmo(ref Command_Action command)
+        {
             switch (wantedState)
             {
                 case State.Open:
-                    command.icon = AjarIcon;
-                    command.defaultLabel = "Open the window";
+                    command.icon = GraphicCache.AjarIcon;
+                    command.defaultLabel = "openwindow".TranslateSimple();
                     break;
 
                 case State.Ajar:
-                    command.icon = ClosedIcon;
-                    command.defaultLabel = "Close the window";
+                    command.icon = GraphicCache.ClosedIcon;
+                    command.defaultLabel = "closewindow".TranslateSimple();
                     break;
 
                 case State.Closed:
-                    command.icon = OpenIcon;
-                    command.defaultLabel = "Open the blinds";
+                    command.icon = GraphicCache.OpenIcon;
+                    command.defaultLabel = "shutwindow".TranslateSimple();
                     break;
             }
-            command.defaultDesc = "Change the current state of the window";
+            command.defaultDesc = "changestatewindow".TranslateSimple();
             command.action = delegate
             {
                 switch (wantedState)
                 {
-                    case State.Open: wantedState = State.Ajar; break;
-                    case State.Ajar: wantedState = State.Closed; break;
-                    case State.Closed: wantedState = State.Open; break;
+                    case State.Open:    wantedState = State.Ajar; break;
+                    case State.Ajar:    wantedState = State.Closed; break;
+                    case State.Closed:  wantedState = State.Open; break;
                 }
 
-                if (state != wantedState)
+                if (ElifsDecorationsSettings.Flickable)
                 {
-                    Designation designation = Parent.Map.designationManager.DesignationOn(Parent, Window_DefOf.SwitchWindow);
-                    if (designation == null)
+                    if (state != wantedState)
                     {
-                        Parent.Map.designationManager.AddDesignation(new Designation(Parent, Window_DefOf.SwitchWindow));
+                        Designation designation = Parent.Map.designationManager.DesignationOn(Parent, Window_DefOf.SwitchWindow);
+                        if (designation == null)
+                        {
+                            Parent.Map.designationManager.AddDesignation(new Designation(Parent, Window_DefOf.SwitchWindow));
+                        }
+                    }
+                    else
+                    {
+                        Designation designation = Parent.Map.designationManager.DesignationOn(Parent, Window_DefOf.SwitchWindow);
+                        if (designation != null)
+                        {
+                            designation.Delete();
+                        }
                     }
                 }
                 else
                 {
-                    Designation designation = Parent.Map.designationManager.DesignationOn(Parent, Window_DefOf.SwitchWindow);
-                    if (designation != null)
-                    {
-                        designation.Delete();
-                    }
+                    ChangeState();
                 }
             };
+        }
 
-            yield return command;
-
+        public void GetFacingGizmo(ref Command_Action command)
+        {
             command = new Command_Action();
-            command.icon = FlipIcon;
-            command.defaultLabel = "Switch Facing Direction";
-            command.defaultDesc = "Switch the direction that the window faces manually";
+            command.icon = GraphicCache.FlipIcon;
+            command.defaultLabel = "switchfacing".TranslateSimple();
+            command.defaultDesc = "switchfacingdesc".TranslateSimple();
             command.action = delegate
             {
-                if(Parent.Rotation.IsHorizontal)
+                if (Parent.Rotation.IsHorizontal)
                 {
-                    if (facing == LinkDirections.Left) 
+                    if (facing == LinkDirections.Left)
                         facing = LinkDirections.Right;
-                    else 
+                    else
                         facing = LinkDirections.Left;
-                } else
+                }
+                else
                 {
                     if (facing == LinkDirections.Up)
                         facing = LinkDirections.Down;
@@ -136,14 +163,12 @@ namespace ElifsDecorations
 
                 UpdateWindow();
             };
-            yield return command;
         }
-
         public override string CompInspectStringExtra()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append($"Window is currently {state.ToString()}, with the target state of {wantedState.ToString()}");
-            builder.Append($"\nand is currently facing {facing.ToString()}");
+            builder.AppendLine("statestr".Translate(state.ToString(), wantedState.ToString()));
+            builder.Append("facingstr".Translate(facing.ToString()));
             builder.Append(base.CompInspectStringExtra());
             return builder.ToString();
         }
@@ -152,11 +177,6 @@ namespace ElifsDecorations
         {
             base.PostDrawExtraSelectionOverlays();
             GenDraw.DrawFieldEdges(Parent.Cells.ToList(), Color.green);
-        }
-
-        public override void Initialize(CompProperties props)
-        {
-            base.Initialize(props);
         }
 
         public void ChangeState()
@@ -170,7 +190,9 @@ namespace ElifsDecorations
             if (NeedRefresh) // this will cause some (possibly) mad spikes if you open/close a bunch of windows in a large base
             {
                 UpdateWindow();
-                GetBeauty();
+
+                if (ElifsDecorationsSettings.BeautyEnabled)
+                    GetBeauty();
             }
         }
 
@@ -181,7 +203,9 @@ namespace ElifsDecorations
             WindowCache.WindowComponent.UpdateWindowCells(Parent, true);
 
             Find.CurrentMap.mapDrawer.MapMeshDirty(Parent.Position, MapMeshFlag.GroundGlow);
-            GetBeauty();
+
+            if(ElifsDecorationsSettings.BeautyEnabled)
+                GetBeauty();
         }
 
         // in short, get all the cells in the 'radius' of the window, whichever 'side' of the window has less roof cells becomes the side that is being faced, i.e. light goes to the side with more roofs
@@ -220,13 +244,13 @@ namespace ElifsDecorations
 
             if (count > leftCount)
             {
-                if (Parent.Rotation.IsHorizontal) facing = LinkDirections.Right;
-                else facing = LinkDirections.Up;
+                if (Parent.Rotation.IsHorizontal) facing = LinkDirections.Left;
+                else facing = LinkDirections.Down;
             }
             else if (count < leftCount)
             {
-                if (Parent.Rotation.IsHorizontal) facing = LinkDirections.Left;
-                else facing = LinkDirections.Down;
+                if (Parent.Rotation.IsHorizontal) facing = LinkDirections.Right;
+                else facing = LinkDirections.Up;
             }
             else
                 facing = LinkDirections.None;
@@ -243,7 +267,7 @@ namespace ElifsDecorations
         {
             CachedBeauty = 0f;
 
-            if (state == State.Closed) return;
+            if (state == State.Closed || ElifsDecorationsSettings.BeautyEnabled) return;
 
             var things = new List<Thing>();
             foreach (var cell in WindowUtility.GetWindowCells(Parent, true).Except(Parent.Cells))

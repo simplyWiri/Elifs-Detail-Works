@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using UnityEngine;
 using Verse;
 
@@ -17,19 +18,19 @@ namespace ElifsDecorations
             List<IntVec3> returnVec = new List<IntVec3>();
             foreach (IntVec3 c in GetWindowCells(window, center, rot, size, map))
             {
-                if (!c.Impassable(map))
-                    returnVec.Add(c);
-                //if (LightReaches(c, center, map))
-                //{
+                //if (!c.Impassable(map))
                 //    returnVec.Add(c);
-                //}
+                if (LightReaches(c, center, map))
+                {
+                    returnVec.Add(c);
+                }
             }
             return returnVec;
         }
 
         private static bool LightReaches(IntVec3 cell, IntVec3 observer, Map map)
         {
-            return (cell.Walkable(map) && GenSight.LineOfSightToEdges(cell, observer, map));
+            return (cell.Walkable(map) && GenSight.LineOfSightToEdges(cell, observer, map, true));
         }
 
         public static List<IntVec3> GetWindowCells(Building_Window window, bool forceAll = false)
@@ -85,7 +86,7 @@ namespace ElifsDecorations
                 if (!rot.IsHorizontal && ((window.WindowComp.facing == LinkDirections.Up && c.z < center.z) || (window.WindowComp.facing == LinkDirections.Down && c.z > center.z)))
                     return true;
 
-                if (rot.IsHorizontal && ((window.WindowComp.facing == LinkDirections.Left && c.x < center.x) || (window.WindowComp.facing == LinkDirections.Right && c.x > center.x)))
+                if (rot.IsHorizontal && ((window.WindowComp.facing == LinkDirections.Right && c.x < center.x) || (window.WindowComp.facing == LinkDirections.Left && c.x > center.x)))
                     return true;
             }
 

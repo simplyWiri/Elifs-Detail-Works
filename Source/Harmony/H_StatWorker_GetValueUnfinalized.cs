@@ -14,7 +14,7 @@ namespace ElifsDecorations
     {
         public static void Postfix(StatRequest req, StatDef ___stat, ref float __result)
         {
-            if (___stat != StatDefOf.Beauty || !req.HasThing) return;
+            if (!ElifsDecorationsSettings.BeautyEnabled || ___stat != StatDefOf.Beauty || !req.HasThing) return;
 
             if (req.Thing is Building_Window window)
                 __result += window?.WindowComp?.CachedBeauty ?? 0;

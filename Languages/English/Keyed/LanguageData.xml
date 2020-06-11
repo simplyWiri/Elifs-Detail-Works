@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <openwindow>Open the window</openwindow>
+  <closewindow>Close the window</closewindow>
+  <shutwindow>Close the blinds</shutwindow>
+  <changestatewindow>Change the current state of the window</changestatewindow>
+  <switchfacing>Switch the the direction the window is facing</switchfacing>
+  <switchfacingdesc>Manually switch the direction that the window is facing</switchfacingdesc>
+
+  <!-- 0 is the current state, 1 is the wanted state -->
+  <statestr>Window is currently {0}, with the target state of {1}</statestr>
+
+  <!-- 0 is the current cardinal direction the window is facing -->
+  <facingstr>Window is currently facing {0}</facingstr>
+
+
+  <!-- Settings -->
+  <defaultheading>Default Settings</defaultheading>
+  <enablebeauty>Enable Beauty</enablebeauty>    
+  <flickable>Flickable (if this is checked, pawns will have to manually walk over to change the state of windows)</flickable>    
+  <shootthrough>Can be shot through (acts as an embrasure)</shootthrough>    
+  <temptransmit>Can transmit temperature</temptransmit>    
+  <focaltype>Window Focal Type (shape of cells)</focaltype>    
+  <circular>Circular</circular>    
+  <rectangular>Rectangular</rectangular>    
+
+</LanguageData>

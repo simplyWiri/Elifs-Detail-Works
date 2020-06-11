@@ -7,7 +7,12 @@
         <li>ElifsDecorations.Building_Window</li>
         <li>ElifsDecorations.MapComponent_Windows</li>
         <li>ElifsDecorations.LightingOverlay_Regenerate</li>
+        <li>ElifsDecorations.CompWindow</li>
         <li>ElifsDecorations.GlowGrid_GameGlowAt</li>
+        <li>ElifsDecorations.H_StatWorker_GetValueUnfinalized</li>
+        <li>ElifsDecorations.JobDriver_Flick</li>
+        <li>ElifsDecorations.WorkGiver_Flick</li>
+        <li>ElifsDecorations.NeedOutdoors_NeedInterval</li>
     </Types>
     </ElifsWindows>
 </Analyzer>

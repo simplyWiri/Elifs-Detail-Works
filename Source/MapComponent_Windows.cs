@@ -21,6 +21,8 @@ namespace ElifsDecorations
             if (!windows.Contains(window))
             {
                 windows.Add(window);
+                window.WindowComp.TryResolveFacing(); // lets figure out if our window should flip directions
+                window.Cells = WindowUtility.CalculateWindowLightCells(window);
                 UpdateWindowCells(window, true);
             }
         }

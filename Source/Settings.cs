@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Reflection.Emit;
+using UnityEngine;
 using Verse;
 
 namespace ElifsDecorations
@@ -10,10 +11,10 @@ namespace ElifsDecorations
 
     public class ElifsDecorationsSettings : ModSettings
     {
-        public static bool BeautyEnabled = false;
-        public static bool Flickable = false;
-        public static bool CanShootThrough = false;
-        public static bool CanTransmitTemperature = false;
+        public static bool BeautyEnabled = true;
+        public static bool Flickable = true;
+        public static bool CanShootThrough = true;
+        public static bool CanTransmitTemperature = true;
         public static WindowFocalType focalType = WindowFocalType.Circular;
 
         public static void DoWindowContents(Rect inRect)
@@ -21,19 +22,19 @@ namespace ElifsDecorations
             Listing_Standard listing = new Listing_Standard();
             listing.Begin(inRect);
 
-            Heading(listing, "Toggles");
-            listing.CheckboxLabeled("Enable Beauty", ref BeautyEnabled);
-            listing.CheckboxLabeled("Flickable", ref Flickable);
-            listing.CheckboxLabeled("Can Shoot Through (Acting as embrasures)", ref CanShootThrough);
-            listing.CheckboxLabeled("Can transmit temperature", ref CanTransmitTemperature);
+            Heading(listing, "defaultheading".TranslateSimple());
+            listing.CheckboxLabeled("enablebeauty".TranslateSimple(), ref BeautyEnabled);
+            listing.CheckboxLabeled("flickable".TranslateSimple(), ref Flickable);
+            listing.CheckboxLabeled("shootthrough".TranslateSimple(), ref CanShootThrough);
+            listing.CheckboxLabeled("temptransmit".TranslateSimple(), ref CanTransmitTemperature);
 
-            Heading(listing, "Window Focal Type");
-            if (Widgets.RadioButtonLabeled(listing.GetRect(30f), "Circular", focalType == WindowFocalType.Circular))
+            Heading(listing, "focaltype".TranslateSimple());
+            if (Widgets.RadioButtonLabeled(listing.GetRect(30f), "circular".TranslateSimple(), focalType == WindowFocalType.Circular))
             {
                 focalType = WindowFocalType.Circular;
                 WindowCache.WindowComponent.UpdateAllWindowCells();
             }
-            if (Widgets.RadioButtonLabeled(listing.GetRect(30f), "Rectangular", focalType == WindowFocalType.Rectangular))
+            if (Widgets.RadioButtonLabeled(listing.GetRect(30f), "rectangular".TranslateSimple(), focalType == WindowFocalType.Rectangular))
             {
                 focalType = WindowFocalType.Rectangular;
                 WindowCache.WindowComponent.UpdateAllWindowCells();
