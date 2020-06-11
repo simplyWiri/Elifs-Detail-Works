@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DesignationDef>
+    <defName>SwitchWindow</defName>
+    <texturePath>Designations/Flick</texturePath>
+    <targetType>Thing</targetType>
+    <designateCancelable>false</designateCancelable>
+  </DesignationDef>
+
+</Defs>

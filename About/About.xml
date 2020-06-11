@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<packageId>ELIF.FlooringAndDecorativeOptions</packageId>
+	<name>[ELIF] Flooring and Decorative Options</name>
+	<description>ELIFs Flooring and Decorative Options aims to provide many more polished vanilla like flooring and decorative options to Rimworld, built to be used along side with Dubs Paint Tool and Clutter Doors. \n\nUpdated: M-05/D-22/Y-2020\n\nTranslations:\nGerman Translation by: Erdnussbrot</description>
+	<author>ELIF</author>
+    <supportedVersions>
+        <li>1.1</li>
+    </supportedVersions>
+</ModMetaData>

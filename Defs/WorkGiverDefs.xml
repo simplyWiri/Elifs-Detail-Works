@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<WorkGiverDef>
+		<defName>Elifs_WorkGiver</defName>
+		<label>open or close a window</label>
+		<giverClass>ElifsDecorations.WorkGiver_Flick</giverClass>
+    <workType>BasicWorker</workType>
+    <verb>change the state of a window</verb>
+    <gerund>changing the state of a window</gerund>
+    <canBeDoneWhileDrafted>true</canBeDoneWhileDrafted>
+    <priorityInType>1</priorityInType>
+  </WorkGiverDef>
+	
+</Defs>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Analyzer>
+    <ElifsWindows>
+    <Types>
+        <li>ElifsDecorations.WindowUtility</li>
+        <li>ElifsDecorations.WindowCache</li>
+        <li>ElifsDecorations.Building_Window</li>
+        <li>ElifsDecorations.MapComponent_Windows</li>
+        <li>ElifsDecorations.LightingOverlay_Regenerate</li>
+        <li>ElifsDecorations.GlowGrid_GameGlowAt</li>
+    </Types>
+    </ElifsWindows>
+</Analyzer>

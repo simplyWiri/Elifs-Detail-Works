@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase" Name="Window">
+    <defName>SimpleOpenWindow</defName>
+    <label>Rustic Window</label>
+    <description>A simple shutter that lets light and air in when open. But even closed it doesn't provide good insulation. Comes with a view.</description>
+    <graphicData>
+      <texPath>Things/Building/SimpleWindow</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+      
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+      
+    </graphicData>
+    <thingClass>ElifsDecorations.Building_Window</thingClass>
+    
+    <category>Building</category>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>1</fillPercent>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>850</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Beauty>5</Beauty>
+    </statBases>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <selectable>true</selectable>
+    <rotatable>true</rotatable>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Structure</designationCategory>
+    <designationHotKey>Misc3</designationHotKey>
+    <holdsRoof>true</holdsRoof>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <passability>Impassable</passability>
+    <blockLight>false</blockLight>
+    <blockWind>true</blockWind>
+    <coversFloor>true</coversFloor>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>true</canOverlapZones>
+    <tickerType>Rare</tickerType>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <building>
+      <isInert>true</isInert>
+      <canPlaceOverWall>true</canPlaceOverWall>
+    </building>
+
+    <uiIconPath>Things/Building/SimpleWindow_north</uiIconPath>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <size>(1,1)</size>
+    <costStuffCount>25</costStuffCount>
+    <comps>
+      <li Class="ElifsDecorations.CompProperties_Window">
+        <radius>3</radius>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>
