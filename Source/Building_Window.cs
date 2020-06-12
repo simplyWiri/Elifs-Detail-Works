@@ -48,6 +48,9 @@ namespace ElifsDecorations
 
             Map.linkGrid.Notify_LinkerCreatedOrDestroyed(this);
             map.mapDrawer.MapMeshDirty(Position, MapMeshFlag.Things, true, false);
+
+            WindowComp.state = WindowComp.NextState(State.None);
+            WindowComp.wantedState = WindowComp.NextState(State.None);
         }
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)

@@ -11,7 +11,7 @@ namespace ElifsDecorations
     // Open lets light & beauty through
     // Ajar lets light & beauty & temperature flow + shooting through
     // Closed lets none through
-    public enum State { Open, Ajar, Closed }
+    public enum State { None, Open, Ajar, Closed }
 
     [StaticConstructorOnStartup]
     public static class GraphicCache
@@ -56,8 +56,8 @@ namespace ElifsDecorations
     public class CompWindow : ThingComp
     {
         public Building_Window Parent => (Building_Window)parent;
-        public State state = State.Open;
-        public State wantedState = State.Open;
+        public State state = State.None;
+        public State wantedState = State.None;
         public LinkDirections facing = LinkDirections.None;
         public float CachedBeauty = 0f;
         
@@ -126,12 +126,7 @@ namespace ElifsDecorations
             command.defaultDesc = "changestatewindow".TranslateSimple();
             command.action = delegate
             {
-                switch (wantedState)
-                {
-                    case State.Open:    wantedState = State.Ajar; break;
-                    case State.Ajar:    wantedState = State.Closed; break;
-                    case State.Closed:  wantedState = State.Open; break;
-                }
+                wantedState = NextState(wantedState);
 
                 if (ElifsDecorationsSettings.Flickable)
                 {
@@ -157,6 +152,18 @@ namespace ElifsDecorations
                     ChangeState();
                 }
             };
+        }
+
+        public State NextState(State baseState)
+        {
+            switch(baseState)
+            {
+                case State.None:    if (Props.open)     return State.Open;      else if (Props.ajar)    return State.Ajar;      else if (Props.closed) return State.Closed; break;
+                case State.Open:    if (Props.ajar)     return State.Ajar;      else if (Props.closed)  return State.Closed;    else if (Props.open) return State.Open; break;
+                case State.Ajar:    if (Props.closed)   return State.Closed;    else if (Props.open)    return State.Open;      else if (Props.ajar) return State.Ajar; break; 
+                case State.Closed:  if (Props.open)     return State.Open;      else if (Props.ajar)    return State.Ajar;      else if (Props.closed) return State.Closed; break;
+            }
+            return State.None;
         }
 
         public void GetFacingGizmo(ref Command_Action command)
