@@ -8,11 +8,14 @@
   <switchfacing>Switch the the direction the window is facing</switchfacing>
   <switchfacingdesc>Manually switch the direction that the window is facing</switchfacingdesc>
 
-  <!-- 0 is the current state, 1 is the wanted state -->
-  <statestr>Window is currently {0}, with the target state of {1}</statestr>
+  <!-- 0 is the current state -->
+  <statestr>Status: {0}</statestr>
+  
+  <!-- 0 is the current desired state -->
+  <statewantedstr>Target: {0}</statewantedstr> 
 
   <!-- 0 is the current cardinal direction the window is facing -->
-  <facingstr>Window is currently facing {0}</facingstr>
+  <facingstr>Facing: {0}</facingstr>
 
 
   <!-- Settings -->

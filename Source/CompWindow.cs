@@ -167,7 +167,8 @@ namespace ElifsDecorations
         public override string CompInspectStringExtra()
         {
             StringBuilder builder = new StringBuilder();
-            builder.AppendLine("statestr".Translate(state.ToString(), wantedState.ToString()));
+            builder.AppendLine("statestr".Translate(state.ToString()));
+            builder.AppendLine("statewantedstr".Translate(wantedState.ToString()));
             builder.Append("facingstr".Translate(facing.ToString()));
             builder.Append(base.CompInspectStringExtra());
             return builder.ToString();
