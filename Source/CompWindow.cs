@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,20 +20,46 @@ namespace ElifsDecorations
         public static Texture2D ClosedIcon = ContentFinder<Texture2D>.Get("UI/Closed", false);
         public static Texture2D AjarIcon = ContentFinder<Texture2D>.Get("UI/Ajar", false);
         public static Texture2D FlipIcon = ContentFinder<Texture2D>.Get("UI/Flip", false);
+
+        private static Dictionary<ThingDef, Graphic> offGraphics = new Dictionary<ThingDef, Graphic>();
+        public static Graphic GetOffGraphic(ThingWithComps parent)
+        {
+            try
+            {
+                return offGraphics[parent.def];
+            } catch (Exception)
+            {
+                var g = GraphicDatabase.Get(parent.def.graphicData.graphicClass, parent.def.graphicData.texPath + "_Off", parent.def.graphicData.shaderType.Shader, parent.def.graphicData.drawSize, parent.DrawColor, parent.DrawColorTwo);
+                ajarGraphics.Add(parent.def, g);
+
+                return offGraphics[parent.def];
+            }
+        }
+
+        private static Dictionary<ThingDef, Graphic> ajarGraphics = new Dictionary<ThingDef, Graphic>();
+        public static Graphic GetAjarGraphic(ThingWithComps parent)
+        {
+            try
+            {
+                return ajarGraphics[parent.def];
+            }
+            catch (Exception)
+            {
+                var g = GraphicDatabase.Get(parent.def.graphicData.graphicClass, parent.def.graphicData.texPath + "_Ajar", parent.def.graphicData.shaderType.Shader, parent.def.graphicData.drawSize, parent.DrawColor, parent.DrawColorTwo);
+                ajarGraphics.Add(parent.def, g);
+
+                return ajarGraphics[parent.def];
+            }
+        }
     }
 
     public class CompWindow : ThingComp
     {
         public Building_Window Parent => (Building_Window)parent;
-
-        Graphic offGraphic = null;
-        Graphic ajarGraphic = null;
-
         public State state = State.Open;
         public State wantedState = State.Open;
         public LinkDirections facing = LinkDirections.None;
         public float CachedBeauty = 0f;
-
         
         public CompProperties_Window Props => (CompProperties_Window)props;
 
@@ -40,20 +67,14 @@ namespace ElifsDecorations
         {
             get
             {
-                if (offGraphic == null)
-                    offGraphic = GraphicDatabase.Get(parent.def.graphicData.graphicClass, parent.def.graphicData.texPath + "_Off", parent.def.graphicData.shaderType.Shader, parent.def.graphicData.drawSize, parent.DrawColor, parent.DrawColorTwo);
-
-                return offGraphic;
+                return GraphicCache.GetOffGraphic(parent);
             }
         }
         public Graphic AjarGraphic
         {
             get
             {
-                if (ajarGraphic == null)
-                    ajarGraphic = GraphicDatabase.Get(parent.def.graphicData.graphicClass, parent.def.graphicData.texPath + "_Ajar", parent.def.graphicData.shaderType.Shader, parent.def.graphicData.drawSize, parent.DrawColor, parent.DrawColorTwo);
-
-                return ajarGraphic;
+                return GraphicCache.GetAjarGraphic(parent);
             }
         }
         public Graphic CurrentGraphic

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Wood -->
+
+  <ELIF_FineWoodCheckeredFloor.label>Feiner Holzboden (Karriert)</ELIF_FineWoodCheckeredFloor.label>
+  <ELIF_FineWoodCheckeredFloor.description>Ein feiner karierter Holzboden für ein warmes, heimeliges Gefühl aus feinstem Holz.</ELIF_FineWoodCheckeredFloor.description>
+
+  <ELIF_FineWoodPlankFloor.label>Feiner Holzboden (Horizontal)</ELIF_FineWoodPlankFloor.label>
+  <ELIF_FineWoodPlankFloor.description>Ein feiner Holzdielenboden für ein warmes, heimeliges Gefühl aus feinstem Holz.</ELIF_FineWoodPlankFloor.description>
+
+  <ELIF_VFineWoodPlankFloor.label>Feiner Holzboden (Vertikal)</ELIF_VFineWoodPlankFloor.label>
+  <ELIF_VFineWoodPlankFloor.description>Ein feiner Holzdielenboden für ein warmes, heimeliges Gefühl aus feinstem Holz.</ELIF_VFineWoodPlankFloor.description>
+
+  <!-- Stone -->
+
+  <ELIF_SimpleFineSandstoneTile.label>Feiner Sandsteinboden</ELIF_SimpleFineSandstoneTile.label>
+  <ELIF_SimpleFineSandstoneTile.description>Ein einfacher aber feiner Sandsteinboden, mit den schärfsten und feinsten Werkzeugen geschnitten, um präzise Schnitte zu erzielen.</ELIF_SimpleFineSandstoneTile.description>
+
+  <ELIF_SimpleFineGraniteTile.label>Feiner Granitboden</ELIF_SimpleFineGraniteTile.label>
+  <ELIF_SimpleFineGraniteTile.description>Ein einfacher aber feiner Granitboden, mit den schärfsten und feinsten Werkzeugen geschnitten, um präzise Schnitte zu erzielen.</ELIF_SimpleFineGraniteTile.description>
+
+  <ELIF_SimpleFineLimestoneTile.label>Feiner Kalksteinboden</ELIF_SimpleFineLimestoneTile.label>
+  <ELIF_SimpleFineLimestoneTile.description>Ein einfacher aber feiner Kalksteinboden, mit den schärfsten und feinsten Werkzeugen geschnitten, um präzise Schnitte zu erzielen.</ELIF_SimpleFineLimestoneTile.description>
+
+  <ELIF_SimpleFineSlateTile.label>Feiner Schieferboden</ELIF_SimpleFineSlateTile.label>
+  <ELIF_SimpleFineSlateTile.description>Ein einfacher aber feiner Schieferboden, mit den schärfsten und feinsten Werkzeugen geschnitten, um präzise Schnitte zu erzielen.</ELIF_SimpleFineSlateTile.description>
+
+  <ELIF_SimpleFineMarbleTile.label>Feiner Marmorboden</ELIF_SimpleFineMarbleTile.label>
+  <ELIF_SimpleFineMarbleTile.description>Ein einfacher aber feiner Marmorboden, mit den schärfsten und feinsten Werkzeugen geschnitten, um präzise Schnitte zu erzielen.</ELIF_SimpleFineMarbleTile.description>
+
+ <!-- Metal -->
+
+  <ELIF_SimpleFineMetalTile.label>Metallgitter</ELIF_SimpleFineMetalTile.label>
+  <ELIF_SimpleFineMetalTile.description>Ein einfacher aber feiner Metallboden, gehämmert und meisterhaft zusammengeschweißt, um eine sehr glatte und glänzende Oberfläche zu erhalten.</ELIF_SimpleFineMetalTile.description>
+
+  <ELIF_VMetalGrateFlooring.label>Metallgitter (Vertikal)</ELIF_VMetalGrateFlooring.label>
+  <ELIF_VMetalGrateFlooring.description>Ein Metallgitterboden, perfekt für deine industriellen Bedürfnisse.</ELIF_VMetalGrateFlooring.description>
+
+  <ELIF_HMetalGrateFlooring.label>Metallgitter (Horizontal)</ELIF_HMetalGrateFlooring.label>
+  <ELIF_HMetalGrateFlooring.description>Ein Metallgitterboden, perfekt für deine industriellen Bedürfnisse.</ELIF_HMetalGrateFlooring.description>
+
+  <ELIF_CMetalGrateFlooring.label>Metallgitter (Ecke)</ELIF_CMetalGrateFlooring.label>
+  <ELIF_CMetalGrateFlooring.description>Ein Metallgitterboden, perfekt für deine industriellen Bedürfnisse.</ELIF_CMetalGrateFlooring.description>
+
+
+  <!-- Carpet -->
+
+  <ELIF_SimpleFineCarpet.label>Feiner Teppich (Teufelsgarn)</ELIF_SimpleFineCarpet.label>
+  <ELIF_SimpleFineCarpet.description>Ein Teppich, der nur aus Teufelsgarn besteht, feuerfest und schön anzusehen ist.</ELIF_SimpleFineCarpet.description>
+
+</LanguageData>

@@ -18,7 +18,9 @@ mono_crash.*
 
 # Build results
 [Dd]ebug/
-Textures/Things/
+Textures/
+About/
+1.1/Defs/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Wall Decal -->
+
+  <ELIF_WallDecal_0D.label>Poster (Muster A)</ELIF_WallDecal_0D.label>
+  <ELIF_WallDecal_0D.description>Dekoriere deine Wände mit diesen Abziehbildern und fügen ihnen etwas besonderes hinzu.</ELIF_WallDecal_0D.description>
+
+  <ELIF_WallDecal_1D.label>Poster (Muster B)</ELIF_WallDecal_1D.label>
+  <ELIF_WallDecal_1D.description>Dekoriere deine Wände mit diesen Abziehbildern und fügen ihnen etwas besonderes hinzu.</ELIF_WallDecal_1D.description>
+
+  <ELIF_WallDecal_2D.label>Poster(Muster C)</ELIF_WallDecal_2D.label>
+  <ELIF_WallDecal_2D.description>Dekoriere deine Wände mit diesen Abziehbildern und fügen ihnen etwas besonderes hinzu.</ELIF_WallDecal_2D.description>
+
+
+  <!-- Table Decor -->
+
+  <ELIF_Table_0D.label>Tischdekoration (A)</ELIF_Table_0D.label>
+  <ELIF_Table_0D.description>Füge ein nicht funktionales Dekor hinzu, damit deine Kolonie lebendiger aussieht.</ELIF_Table_0D.description>
+
+  <ELIF_Table_1D.label>Tischdekoration  (B)</ELIF_Table_1D.label>
+  <ELIF_Table_1D.description>Füge ein nicht funktionales Dekor hinzu, damit deine Kolonie lebendiger aussieht.</ELIF_Table_1D.description>
+
+  <ELIF_Table_2D.label>Tischdekoration (C)</ELIF_Table_2D.label>
+  <ELIF_Table_2D.description>Füge ein nicht funktionales Dekor hinzu, damit deine Kolonie lebendiger aussieht.</ELIF_Table_2D.description>
+
+  <ELIF_Table_3D.label>Tischdekoration (D)</ELIF_Table_3D.label>
+  <ELIF_Table_3D.description>Füge ein nicht funktionales Dekor hinzu, damit deine Kolonie lebendiger aussieht.</ELIF_Table_3D.description>
+
+  <ELIF_Table_4D.label>Tischdekoration (E)</ELIF_Table_4D.label>
+  <ELIF_Table_4D.description>Füge ein nicht funktionales Dekor hinzu, damit deine Kolonie lebendiger aussieht.</ELIF_Table_4D.description>
+
+ <!--  Ramps -->
+ 
+ 
+  <ELIF_Ramp_1S.label>Kleine Rampe (1x1)</ELIF_Ramp_1S.label>
+  <ELIF_Ramp_1S.description>Eine Rampe.</ELIF_Ramp_1S.description>
+
+  <ELIF_Ramp_2S.label>Kleine Rampe (1x2)</ELIF_Ramp_2S.label>
+  <ELIF_Ramp_2S.description>Eine Rampe.</ELIF_Ramp_2S.description>
+
+  <ELIF_Ramp_3S.label>Kleine Rampe (1x3)</ELIF_Ramp_3S.label>
+  <ELIF_Ramp_3S.description>Eine Rampe.</ELIF_Ramp_3S.description>
+
+  <ELIF_Ramp_4S.label>Kleine Rampe (1x4)</ELIF_Ramp_4S.label>
+  <ELIF_Ramp_4S.description>Eine Rampe.</ELIF_Ramp_4S.description>
+
+  <ELIF_Ramp_5S.label>Kleine Rampe(1x5)</ELIF_Ramp_5S.label>
+  <ELIF_Ramp_5S.description>Eine Rampe.</ELIF_Ramp_5S.description>
+
+
+  <!-- Stairs -->
+
+  <ELIF_FStairs_S.label>Treppe</ELIF_FStairs_S.label>
+  <ELIF_FStairs_S.description>Treppen...ja...definitiv Treppen... nicht nur dunkle Linien, die so tun, als wären sie Treppen.</ELIF_FStairs_S.description>
+
+  <ELIF_FStairs_SC.label>Treppe (Eckig)</ELIF_FStairs_SC.label>
+  <ELIF_FStairs_SC.description>Treppen...ja...definitiv Treppen... nicht nur dunkle Linien, die so tun, als wären sie Treppen.</ELIF_FStairs_SC.description>
+
+  <ELIF_FStairs_CC.label>Treppe (Abgerundet)</ELIF_FStairs_CC.label>
+  <ELIF_FStairs_CC.description>Treppen...ja...definitiv Treppen...nicht nur dunkle Linien, die so tun, als wären sie Treppen.</ELIF_FStairs_CC.description>
+
+  <ELIF_FStairs_RC.label>Treppe (Rund)</ELIF_FStairs_RC.label>
+  <ELIF_FStairs_RC.description>Treppen...ja...definitiv Treppen...nicht nur dunkle Linien, die so tun, als wären sie Treppen.</ELIF_FStairs_RC.description>
+
+  <ELIF_FStairs_DC.label>Treppe (Diagonal)</ELIF_FStairs_DC.label>
+  <ELIF_FStairs_DC.description>Treppen...ja...definitiv Treppen...nicht nur dunkle Linien, die so tun, als wären sie Treppen.</ELIF_FStairs_DC.description>
+
+  <ELIF_HStairs_S.label>Kleine Treppe</ELIF_HStairs_S.label>
+  <ELIF_HStairs_S.description>Treppen...ja...definitiv Treppen...nicht nur dunkle Linien, die so tun, als wären sie Treppen.</ELIF_HStairs_S.description>
+
+  <ELIF_HStairs_SC.label>Kleine Treppe (Eckig)</ELIF_HStairs_SC.label>
+  <ELIF_HStairs_SC.description>Treppen...ja...definitiv Treppen...nicht nur dunkle Linien, die so tun, als wären sie Treppen.</ELIF_HStairs_SC.description>
+
+  <ELIF_HStairs_CC.label>Kleine Treppe (Abgerundet)</ELIF_HStairs_CC.label>
+  <ELIF_HStairs_CC.description>Treppen...ja...definitiv Treppen...nicht nur dunkle Linien, die so tun, als wären sie Treppen.</ELIF_HStairs_CC.description>
+
+  <ELIF_HStairs_RC.label>Kleine Treppe (Rund)</ELIF_HStairs_RC.label>
+  <ELIF_HStairs_RC.description>Treppen...ja...definitiv Treppen...nicht nur dunkle Linien, die so tun, als wären sie Treppen.</ELIF_HStairs_RC.description>
+
+  <ELIF_HStairs_DC.label>Kleine Treppe (Diagonal)</ELIF_HStairs_DC.label>
+  <ELIF_HStairs_DC.description>Treppen...ja...definitiv Treppen...nicht nur dunkle Linien, die so tun, als wären sie Treppen.</ELIF_HStairs_DC.description>
+
+
+  <!-- Recreation -->
+
+  <ELIF_WallMountedFTV.label>Flachbildfernseher (Wand)</ELIF_WallMountedFTV.label>
+  <ELIF_WallMountedFTV.description>Ein Hightech-Flachbildfernseher mit kristallklarem Bild und satten Farben. Nimmt Übertragungen von alten Satelliten und allgegenwärtigen Datenkarten auf.</ELIF_WallMountedFTV.description>
+
+
+   <!-- Borders -->
+
+  <ELIF_HBorder.label>Abgrenzung (Gefahr)</ELIF_HBorder.label>
+  <ELIF_HBorder.description>Eine Gefahrengrenze. Bist du genervt von Gefahrmarkierungen, die eine ganze Fliese einnehmen? Dann verwende diese Gefahrengrenzen, ihre dünneren, weniger auffälligen, aber ästhetisch ansprechenden Markierungen, warnen vor Gefahr blockieren aber nicht den ganzen Boden..</ELIF_HBorder.description>
+
+  <ELIF_SBorder.label>Abgrenzung (Einfach)</ELIF_SBorder.label>
+  <ELIF_SBorder.description>Ein einfacher Rand, bieten eine einfache Möglichkeit, Bereiche zu trennen. (Können sich überschneiden).</ELIF_SBorder.description>
+
+  <ELIF_BBorder.label>Abgrenzung (Ziegel)</ELIF_BBorder.label>
+  <ELIF_BBorder.description>Ein Rand aus Ziegelsteinen, bietet eine einfache Möglichkeit, Bereiche zu trennen. (Können sich überschneiden).</ELIF_BBorder.description>
+
+  <ELIF_WBorder.label>Abgrenzung (Pfähle)</ELIF_WBorder.label>
+  <ELIF_WBorder.description>Ein Rand aus Pfählen, bietet eine einfache Möglichkeit, Bereiche zu trennen. (Können sich überschneiden).</ELIF_WBorder.description>
+
+  <ELIF_CBorder.label>Abgrenzung (Ecke)</ELIF_CBorder.label>
+  <ELIF_CBorder.description>Ein Eckenrand, bietet eine einfache Möglichkeit, Bereiche zu trennen. (Können sich überschneiden).</ELIF_CBorder.description>
+
+
+  <!-- Banners -->
+
+  <ELIF_Banner_A.label>Banner (Muster A)</ELIF_Banner_A.label>
+  <ELIF_Banner_A.description>Hänge Banner auf, um deine Kolonie darzustellen und deinen Kolonisten etwas zu geben, mit dem sie sich identifizieren können. Es gibt 5 verschiedene Muster.</ELIF_Banner_A.description>
+
+  <ELIF_Banner_B.label>Banner (Muster B)</ELIF_Banner_B.label>
+  <ELIF_Banner_B.description>Hänge Banner auf, um deine Kolonie darzustellen und deinen Kolonisten etwas zu geben, mit dem sie sich identifizieren können. Es gibt 5 verschiedene Muster.</ELIF_Banner_B.description>
+
+  <ELIF_Banner_C.label>Banner (Muster C)</ELIF_Banner_C.label>
+  <ELIF_Banner_C.description>Hänge Banner auf, um deine Kolonie darzustellen und deinen Kolonisten etwas zu geben, mit dem sie sich identifizieren können. Es gibt 5 verschiedene Muster.</ELIF_Banner_C.description>
+
+  <ELIF_Banner_D.label>Banner (Muster D)</ELIF_Banner_D.label>
+  <ELIF_Banner_D.description>Hänge Banner auf, um deine Kolonie darzustellen und deinen Kolonisten etwas zu geben, mit dem sie sich identifizieren können. Es gibt 5 verschiedene Muster.</ELIF_Banner_D.description>
+
+  <ELIF_Banner_E.label>Banner (Muster E)</ELIF_Banner_E.label>
+  <ELIF_Banner_E.description>Hänge Banner auf, um deine Kolonie darzustellen und deinen Kolonisten etwas zu geben, mit dem sie sich identifizieren können. Es gibt 5 verschiedene Muster.</ELIF_Banner_E.description>
+
+
+  <!-- Floor Lights -->
+
+  <ELIF_FloorLight.label>Bodenbeleuchtung</ELIF_FloorLight.label>
+  <ELIF_FloorLight.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLight.description>
+
+  <ELIF_FloorLightWarm.label>Bodenbeleuchtung (Warm)</ELIF_FloorLightWarm.label>
+  <ELIF_FloorLightWarm.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightWarm.description>
+
+  <ELIF_FloorLightCold.label>Bodenbeleuchtung (Kalt)</ELIF_FloorLightCold.label>
+  <ELIF_FloorLightCold.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightCold.description>
+
+  <ELIF_FloorLightRed.label>Bodenbeleuchtung (Rot)</ELIF_FloorLightRed.label>
+  <ELIF_FloorLightRed.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightRed.description>
+
+  <ELIF_FloorLightGreen.label>Bodenbeleuchtung (Grün)</ELIF_FloorLightGreen.label>
+  <ELIF_FloorLightGreen.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightGreen.description>
+
+  <ELIF_FloorLightBlue.label>Bodenbeleuchtung (Blau)</ELIF_FloorLightBlue.label>
+  <ELIF_FloorLightBlue.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightBlue.description>
+
+  <ELIF_FloorLightYellow.label>Bodenbeleuchtung (Gelb)</ELIF_FloorLightYellow.label>
+  <ELIF_FloorLightYellow.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightYellow.description>
+
+  <ELIF_FloorLightCyan.label>Bodenbeleuchtung (Cyan)</ELIF_FloorLightCyan.label>
+  <ELIF_FloorLightCyan.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightCyan.description>
+
+  <ELIF_FloorLightMagenta.label>Bodenbeleuchtung (Magenta)</ELIF_FloorLightMagenta.label>
+  <ELIF_FloorLightMagenta.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightMagenta.description>
+
+  <ELIF_FloorLightRose.label>Bodenbeleuchtung (Róse)</ELIF_FloorLightRose.label>
+  <ELIF_FloorLightRose.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightRose.description>
+
+  <ELIF_FloorLightViolet.label>Bodenbeleuchtung (Violett)</ELIF_FloorLightViolet.label>
+  <ELIF_FloorLightViolet.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightViolet.description>
+
+  <ELIF_FloorLightAzure.label>Bodenbeleuchtung (Azurblau)</ELIF_FloorLightAzure.label>
+  <ELIF_FloorLightAzure.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightAzure.description>
+
+  <ELIF_FloorLightOrange.label>Bodenbeleuchtung (Orange)</ELIF_FloorLightOrange.label>
+  <ELIF_FloorLightOrange.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightOrange.description>
+
+  <ELIF_FloorLightChartreuseGreen.label>Bodenbeleuchtung (Kräutergrün)</ELIF_FloorLightChartreuseGreen.label>
+  <ELIF_FloorLightChartreuseGreen.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightChartreuseGreen.description>
+
+  <ELIF_FloorLightSpringGreen.label>Bodenbeleuchtung (Frühlingsgrün)</ELIF_FloorLightSpringGreen.label>
+  <ELIF_FloorLightSpringGreen.description>Eine Bodenbeleuchtung, die nicht als Ersatz für deine Standardbeleuchtung gedacht ist. Sie bietet deiner Kolonie eine Möglichkeit für eine stimmungsvolle Beleuchtung. Schließlich spielt die Beleuchtung eine große Rolle für das Aussehen deiner Kolonie. (Es gibt sie in 15 unterschiedlichen Farben und sie können sich überschneiden)</ELIF_FloorLightSpringGreen.description>
+
+
+  <!-- Floor Things -->
+
+  <ELIF_HDoorRail.label>Türschiene (Horizontal)</ELIF_HDoorRail.label>
+  <ELIF_HDoorRail.description>Türschienen für deine Schiebetüren. Swoosh Sweesh ~</ELIF_HDoorRail.description>
+
+  <ELIF_VDoorRail.label>Türschiene (Vertikal)</ELIF_VDoorRail.label>
+  <ELIF_VDoorRail.description>Türschienen für deine Schiebetüren. Swoosh Sweesh ~</ELIF_VDoorRail.description>
+
+
+</LanguageData>

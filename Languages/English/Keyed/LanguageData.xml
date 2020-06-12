@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
+  <elifsdetailworks>Elifs Detail Works</elifsdetailworks>
+
   <openwindow>Open the window</openwindow>
   <closewindow>Close the window</closewindow>
   <shutwindow>Close the blinds</shutwindow>
@@ -16,7 +18,6 @@
 
   <!-- 0 is the current cardinal direction the window is facing -->
   <facingstr>Facing: {0}</facingstr>
-
 
   <!-- Settings -->
   <defaultheading>Default Settings</defaultheading>

@@ -45,11 +45,19 @@ namespace ElifsDecorations
 
             if (ElifsDecorationsSettings.BeautyEnabled)
                 WindowComp.GetBeauty();
+
+            Map.linkGrid.Notify_LinkerCreatedOrDestroyed(this);
+            map.mapDrawer.MapMeshDirty(Position, MapMeshFlag.Things, true, false);
         }
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
             WindowCache.WindowComponent.DeRegisterWindow(this);
+
+            Map.thingGrid.Deregister(this, false);
+            Map.linkGrid.Notify_LinkerCreatedOrDestroyed(this);
+            Map.mapDrawer.MapMeshDirty(Position, MapMeshFlag.Things);
+   
             base.DeSpawn(mode);
         }
 

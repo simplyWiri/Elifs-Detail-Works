@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Reinforced Wall -->
+
+  <ELIF_ReinforcedWallA.label>Verstärkte Wand</ELIF_ReinforcedWallA.label>
+  <ELIF_ReinforcedWallA.description>Eine verstärkte Wand, robust und fein von einem erfahrenen Baumeister hergestellt.</ELIF_ReinforcedWallA.description>
+  <ELIF_ReinforcedWallA_Blueprint.label>Verstärkte Wand (Entwurf)</ELIF_ReinforcedWallA_Blueprint.label>
+  <ELIF_ReinforcedWallA_Frame.label>Verstärkte Wand(im Bau)</ELIF_ReinforcedWallA_Frame.label>
+  <ELIF_ReinforcedWallA_Frame.description>Eine verstärkte Wand, robust und fein von einem erfahrenen Baumeister hergestellt..</ELIF_ReinforcedWallA_Frame.description>
+
+
+</LanguageData>

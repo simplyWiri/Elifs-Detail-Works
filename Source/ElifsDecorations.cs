@@ -19,7 +19,7 @@ namespace ElifsDecorations
 
         public override string SettingsCategory()
         {
-            return "ElifsDecorations";
+            return "elifsdetailworks".Translate();
         }
 
         public override void WriteSettings()
