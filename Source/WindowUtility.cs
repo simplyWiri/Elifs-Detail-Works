@@ -68,12 +68,12 @@ namespace ElifsDecorations
             var extent = (size.x > size.z) ? size.x : size.z;
             var props = window.WindowComp.Props;
 
-            if (props.radius != 0)
-                extent += props.radius;
-            else
-                extent += Mathf.Max(window.WindowComp.Props.x, window.WindowComp.Props.y);
-
             size = new IntVec2(extent, extent);
+            if (props.radius != 0)
+                size += new IntVec2(props.radius, props.radius);
+            else
+                size += new IntVec2(props.x, props.y);
+
 
             switch (ElifsDecorationsSettings.focalType)
             {
