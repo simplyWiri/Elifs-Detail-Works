@@ -12,13 +12,15 @@ namespace ElifsDecorations
     {
         public CompProperties_Window()
         {
-            this.compClass = typeof(CompWindow);
+            compClass = typeof(CompWindow);
         }
 
         public bool ajar = true;
         public bool closed = true;
         public bool open = true;
         
-        public int radius = 3;
+        public int radius = -1;
+        public int x = 3;
+        public int y = 3;
     }
 }

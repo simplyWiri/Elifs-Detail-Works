@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using UnityEngine;
@@ -18,23 +19,18 @@ namespace ElifsDecorations
             List<IntVec3> returnVec = new List<IntVec3>();
             if (window.WindowComp.facing == LinkDirections.None) return returnVec;
 
-
-
             if (cells == null)
             {
                 foreach (IntVec3 c in GetWindowCells(window, center, rot, size, map))
-                {
                     ValidateCell(c);
-                }
             }
             else
             {
                 foreach (IntVec3 c in cells)
-                {
                     ValidateCell(c);
-                }
             }            
             
+
             void ValidateCell(IntVec3 c)
             {
                 bool flag = false;
@@ -70,12 +66,27 @@ namespace ElifsDecorations
             List<IntVec3> returnVec = new List<IntVec3>();
 
             var extent = (size.x > size.z) ? size.x : size.z;
-            extent += window.WindowComp.Props.radius;
+            var props = window.WindowComp.Props;
+
+            if (props.radius != 0)
+                extent += props.radius;
+            else
+                extent += Mathf.Max(window.WindowComp.Props.x, window.WindowComp.Props.y);
 
             size = new IntVec2(extent, extent);
 
             switch (ElifsDecorationsSettings.focalType)
             {
+                case WindowFocalType.Custom:
+                    foreach (IntVec3 c in GenAdj.OccupiedRect(center, rot, size))
+                    {
+                        if (InvalidCell(c, center, rot, window, forceAll))
+                            continue;
+
+                        returnVec.Add(c);
+                    }
+                    break;
+
                 case WindowFocalType.Circular:
                     foreach (var c in GenRadial.RadialCellsAround(center, extent, true))
                     {

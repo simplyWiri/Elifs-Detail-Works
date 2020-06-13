@@ -6,7 +6,7 @@ namespace ElifsDecorations
 {
     public enum WindowFocalType : int 
     {
-        Circular, Rectangular
+        Custom, Circular, Rectangular
     }
 
     public class ElifsDecorationsSettings : ModSettings
@@ -15,7 +15,7 @@ namespace ElifsDecorations
         public static bool Flickable = true;
         public static bool CanShootThrough = true;
         public static bool CanTransmitTemperature = true;
-        public static WindowFocalType focalType = WindowFocalType.Circular;
+        public static WindowFocalType focalType = WindowFocalType.Custom;
 
         public static void DoWindowContents(Rect inRect)
         {
@@ -29,6 +29,11 @@ namespace ElifsDecorations
             listing.CheckboxLabeled("temptransmit".TranslateSimple(), ref CanTransmitTemperature);
 
             Heading(listing, "focaltype".TranslateSimple());
+            if (Widgets.RadioButtonLabeled(listing.GetRect(30f), "custom".TranslateSimple(), focalType == WindowFocalType.Custom))
+            {
+                focalType = WindowFocalType.Custom;
+                WindowCache.WindowComponent.UpdateAllWindowCells();
+            }
             if (Widgets.RadioButtonLabeled(listing.GetRect(30f), "circular".TranslateSimple(), focalType == WindowFocalType.Circular))
             {
                 focalType = WindowFocalType.Circular;

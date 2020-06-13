@@ -26,6 +26,7 @@
   <shootthrough>Can be shot through (acts as an embrasure)</shootthrough>    
   <temptransmit>Can transmit temperature</temptransmit>    
   <focaltype>Window Focal Type (shape of cells)</focaltype>    
+  <custom>Custom</custom>    
   <circular>Circular</circular>    
   <rectangular>Rectangular</rectangular>    
 
