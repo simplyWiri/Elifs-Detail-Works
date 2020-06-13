@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using HarmonyLib;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -240,36 +241,28 @@ namespace ElifsDecorations
         // in short, get all the cells in the 'radius' of the window, whichever 'side' of the window has less roof cells becomes the side that is being faced, i.e. light goes to the side with more roofs
         public void TryResolveFacing()
         {
-            var cells = WindowUtility.GetWindowCells(Parent, true).ToList();
+            var cells = WindowUtility.GetWindowCells(Parent, true);
 
-            var leftCells = cells.Where(c =>
-            {
+            int count = 0;
+            int leftCount = 0;
+            var map = Parent.Map;
+            foreach(var c in cells)
+            { 
                 if (Parent.Rotation.IsHorizontal)
                 {
-                    if (c.x > Parent.Position.x) return true;
-                    return false;
+                    if (c.x > Parent.Position.x)
+                        if(c.Roofed(map)) leftCount++;
+                    else
+                        if (c.Roofed(map)) count++;
                 }
                 else
                 {
-                    if (c.z > Parent.Position.z) return true;
-                        return false;
+                    if (c.z > Parent.Position.z)
+                        if (c.Roofed(map)) leftCount++;
+                    else
+                        if (c.Roofed(map)) count++;
                 }
-            }).ToList();
-
-            foreach (var c in leftCells) // we in effect make sure that 'cells' only contains cells from the 'right' side
-                cells.Remove(c);
-
-            var map = Parent.Map;
-
-            int count = 0;
-            foreach (var c in cells)
-                if (c.Roofed(map))
-                    count++;
-
-            int leftCount = 0;
-            foreach (var c in leftCells)
-                if (c.Roofed(map))
-                    leftCount++;
+            }
 
             if (count > leftCount)
             {

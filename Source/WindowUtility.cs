@@ -16,10 +16,10 @@ namespace ElifsDecorations
         public static List<IntVec3> CalculateWindowLightCells(Building_Window window, IntVec2 size, IntVec3 center, Rot4 rot, Map map)
         {
             List<IntVec3> returnVec = new List<IntVec3>();
+            if (window.WindowComp.facing == LinkDirections.None) return returnVec;
+
             foreach (IntVec3 c in GetWindowCells(window, center, rot, size, map))
             {
-                //if (!c.Impassable(map))
-                //    returnVec.Add(c);
                 if (LightReaches(c, center, map))
                 {
                     returnVec.Add(c);
