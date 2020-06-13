@@ -21,8 +21,8 @@ namespace ElifsDecorations
             if (!windows.Contains(window))
             {
                 windows.Add(window);
-                window.WindowComp.TryResolveFacing(); // lets figure out if our window should flip directions
-                window.Cells = WindowUtility.CalculateWindowLightCells(window);
+                // when we attempt to resolve the facing, we also query cells, and push them to the calculation
+                window.Cells = WindowUtility.CalculateWindowLightCells(window, window.WindowComp.TryResolveFacing());
                 UpdateWindowCells(window, true);
             }
         }
@@ -54,12 +54,12 @@ namespace ElifsDecorations
                 foreach (var window in windowsToUpdate)
                 {
                     UpdateWindowCells(window, false);
-                    window.WindowComp.TryResolveFacing(); // lets figure out if our window should flip directions
-                    window.Cells = WindowUtility.CalculateWindowLightCells(window);
+                    // when we attempt to resolve the facing, we also query cells, and push them to the calculation
+                    window.Cells = WindowUtility.CalculateWindowLightCells(window, window.WindowComp.TryResolveFacing());
                     UpdateWindowCells(window, true);
-                }
 
-                DirtyCells.Clear();
+                    DirtyCells.Clear();
+                }
             }
         }
 
@@ -79,7 +79,7 @@ namespace ElifsDecorations
                 if (register)
                     if (WindowCells.ContainsKey(c)) // if we already have a window here (crossover) add our window to the list
                         WindowCells[c].Add(window);
-                    else 
+                    else
                         WindowCells.Add(c, new List<Building_Window>() { window });
                 else
                 {

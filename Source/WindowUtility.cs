@@ -8,22 +8,46 @@ namespace ElifsDecorations
 {
     public class WindowUtility
     {
-        public static List<IntVec3> CalculateWindowLightCells(Building_Window window)
+        public static List<IntVec3> CalculateWindowLightCells(Building_Window window, List<IntVec3> cells = null)
         {
-            return CalculateWindowLightCells(window, window.def.size, window.Position, window.Rotation, window.Map);
+            return CalculateWindowLightCells(window, window.def.size, window.Position, window.Rotation, window.Map, cells);
         }
 
-        public static List<IntVec3> CalculateWindowLightCells(Building_Window window, IntVec2 size, IntVec3 center, Rot4 rot, Map map)
+        public static List<IntVec3> CalculateWindowLightCells(Building_Window window, IntVec2 size, IntVec3 center, Rot4 rot, Map map, List<IntVec3> cells = null)
         {
             List<IntVec3> returnVec = new List<IntVec3>();
             if (window.WindowComp.facing == LinkDirections.None) return returnVec;
 
-            foreach (IntVec3 c in GetWindowCells(window, center, rot, size, map))
+
+
+            if (cells == null)
             {
-                if (LightReaches(c, center, map))
+                foreach (IntVec3 c in GetWindowCells(window, center, rot, size, map))
                 {
-                    returnVec.Add(c);
+                    ValidateCell(c);
                 }
+            }
+            else
+            {
+                foreach (IntVec3 c in cells)
+                {
+                    ValidateCell(c);
+                }
+            }            
+            
+            void ValidateCell(IntVec3 c)
+            {
+                bool flag = false;
+                foreach (var cell in window.OccupiedRect())
+                {
+                    if (LightReaches(c, cell, map))
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (flag)
+                    returnVec.Add(c);
             }
             return returnVec;
         }

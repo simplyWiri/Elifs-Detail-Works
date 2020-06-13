@@ -239,7 +239,7 @@ namespace ElifsDecorations
         }
 
         // in short, get all the cells in the 'radius' of the window, whichever 'side' of the window has less roof cells becomes the side that is being faced, i.e. light goes to the side with more roofs
-        public void TryResolveFacing()
+        public List<IntVec3> TryResolveFacing()
         {
             var cells = WindowUtility.GetWindowCells(Parent, true);
 
@@ -276,6 +276,8 @@ namespace ElifsDecorations
             }
             else
                 facing = LinkDirections.None;
+
+            return cells;
         }
 
         public override void PostExposeData()
