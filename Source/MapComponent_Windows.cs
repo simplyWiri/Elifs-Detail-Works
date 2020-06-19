@@ -45,9 +45,15 @@ namespace ElifsDecorations
                 HashSet<Building_Window> windowsToUpdate = new HashSet<Building_Window>();
                 foreach (var c in DirtyCells)
                 {
-                    foreach (var window in WindowCells[c])
+                    try
                     {
-                        windowsToUpdate.Add(window);
+                        foreach (var window in WindowCells[c])
+                        {
+                            windowsToUpdate.Add(window);
+                        }
+                    } catch
+                    {
+                        DirtyCells.Remove(c);
                     }
                 }
 

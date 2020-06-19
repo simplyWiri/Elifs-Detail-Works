@@ -50,7 +50,7 @@ namespace ElifsDecorations
 
         private static bool LightReaches(IntVec3 cell, IntVec3 observer, Map map)
         {
-            return (cell.Walkable(map) && GenSight.LineOfSightToEdges(cell, observer, map, true));
+            return ( cell.GetEdifice(map)?.def?.staticSunShadowHeight < .5f || cell.Walkable(map) && GenSight.LineOfSightToEdges(cell, observer, map, true));
         }
 
         public static List<IntVec3> GetWindowCells(Building_Window window, bool forceAll = false)

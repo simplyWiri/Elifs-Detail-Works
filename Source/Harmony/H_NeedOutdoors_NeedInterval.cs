@@ -39,7 +39,7 @@ namespace ElifsDecorations
 
         public static void AdjustNum(RoofDef roofDef, Pawn pawn, ref float num)
         {
-            if (roofDef != null && !pawn.Map.GetComponent<MapComponent_Windows>().WindowCells.ContainsKey(pawn.Position))
+            if (roofDef != null && pawn.Map.GetComponent<MapComponent_Windows>().WindowCells.ContainsKey(pawn.Position))
             {
                 num = (num < 0f) ? num * 0.9f : num / 0.9f;
                 return;
