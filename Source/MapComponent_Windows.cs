@@ -22,7 +22,8 @@ namespace ElifsDecorations
             {
                 windows.Add(window);
                 // when we attempt to resolve the facing, we also query cells, and push them to the calculation
-                window.Cells = WindowUtility.CalculateWindowLightCells(window, window.WindowComp.TryResolveFacing());
+                if(window.WindowComp.facing == LinkDirections.None)
+                    window.Cells = WindowUtility.CalculateWindowLightCells(window, window.WindowComp.TryResolveFacing());
                 UpdateWindowCells(window, true);
             }
         }
